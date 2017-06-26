@@ -15,3 +15,17 @@ Hello2 () {
 }
 
 Hello2 Nick Chris
+
+#return a value
+
+Hello3 () {
+	echo "Hello World $1 $2"
+	return 10
+}
+
+#Invoke function
+
+#Capture return value with last command
+ret=$?
+
+echo "return value is $ret"
