@@ -24,6 +24,7 @@ Hello3 () {
 }
 
 #Invoke function
+Hello3 Nick Chris
 
 #Capture return value with last command
 ret=$?
