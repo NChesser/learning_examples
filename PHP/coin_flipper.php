@@ -1,5 +1,3 @@
-#Simple Coin Flipper in PHP
-
 <?php
 function coin_flipper(){
     $h = 0;
