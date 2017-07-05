@@ -1,5 +1,4 @@
 <?php
-
 $string = "Nick Chesser is really cool!";
 
 function utf8_reverse($str){
@@ -8,5 +7,4 @@ function utf8_reverse($str){
 }
 
 print utf8_reverseString($string);
-
 ?>
