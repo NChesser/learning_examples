@@ -6,5 +6,5 @@ function utf8_reverse($str){
     return join('',array_reverse($array[0]));
 }
 
-print utf8_reverseString($string);
+print utf8_reverse($string);
 ?>
