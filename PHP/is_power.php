@@ -10,7 +10,7 @@ function is_Power($x, $y)
         print "$final is power of $y";  
     }  
     else{  
-        return "$final is not power of $y";  
+        print "$final is not power of $y";  
     }      
 }  
 is_Power(16,2);
