@@ -6,6 +6,7 @@ import difflib
 with open('english-words.json.txt') as data:
     d = json.load(data)
 
+made_guesses = []
 hangman = ["""\
 _________
 """,
@@ -108,19 +109,26 @@ def hang(data):
                 print ("Correct ")
                 print (found)
 
-                if(make_guess(''.join(found), data, len(word)) == word):                    
+                if(make_guess(''.join(found), data) == word):                    
                     print ("Congratulations You Guessed Correctly")
                     return
 
         print (hangman[guesses-1])                
                 
 
-def make_guess(part, data, word_length):
-    guesses = difflib.get_close_matches(part, data, n=100)
-    for guess in guesses: 
-        if len(guess) == word_length:
-            print ("Making Guess " + guess)
-            return guess
+def make_guess(part, data):
+    guesses = difflib.get_close_matches(part, data, n=100, cutoff=0.6)
+    for guess in guesses:        
+        if len(guess) == len(part):
+            wrong = False 
+            for i in range(0, len(part)):
+                if part[i] != "_":
+                    if part[i] != guess[i]:
+                        wrong = True;
+            if not wrong and guess not in made_guesses:
+                print ("Making Guess " + guess)
+                made_guesses.append(guess)
+                return guess
 
 hang(d)           
 
