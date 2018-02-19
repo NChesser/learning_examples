@@ -9,7 +9,7 @@ function delete_logs() {
   DIR=$1
   PATTERN=$2
   cd $DIR
-  rm !($PATTERN)
+  rm !($PATTERN).log
 }
 
 PATTERN=" "
